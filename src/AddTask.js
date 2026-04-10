@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function AddTask() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [msg, setMsg] = useState("");
 
   const handleSubmit = () => {
     const taskData = {
@@ -21,7 +22,9 @@ function AddTask() {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        setMsg("Task Added Successfully");
+        setTitle("");
+        setDescription("");
       });
   };
 
@@ -46,6 +49,8 @@ function AddTask() {
       <br /><br />
 
       <button onClick={handleSubmit}>Submit</button>
+
+      <p>{msg}</p>
     </div>
   );
 }
