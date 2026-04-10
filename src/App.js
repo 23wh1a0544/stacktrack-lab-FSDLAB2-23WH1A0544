@@ -6,7 +6,7 @@ function App() {
     <div>
       <Home />
 
-      {/* TODO: Replace this placeholder with Routes */}
+      {<TaskList/>}
     </div>
   );
 }
